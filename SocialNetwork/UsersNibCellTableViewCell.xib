@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="KGk-i7-Jjw" customClass="UsersNibCellTableViewCell" customModule="SocialNetwork" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="UsersNibCellTableViewCell" customModule="SocialNetwork" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZWx-DC-9Ag">
-                        <rect key="frame" x="8" y="8" width="53" height="53"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N46-s3-eHZ">
+                        <rect key="frame" x="5" y="5" width="310" height="96.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZWx-DC-9Ag">
+                                <rect key="frame" x="12.5" y="22" width="53" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZWx-DC-9Ag" secondAttribute="height" multiplier="1:1" id="3CP-Po-7Ch"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3F-z2-X1T">
+                                <rect key="frame" x="165" y="24" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-os-9OL">
+                                <rect key="frame" x="109" y="62" width="155" height="25"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MOg-os-9OL" secondAttribute="height" multiplier="80:13" id="pAB-5D-nQq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Follow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="followButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wvK-Q8-hIQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="53" id="7Ce-LA-pD2"/>
+                            <constraint firstItem="MOg-os-9OL" firstAttribute="width" secondItem="N46-s3-eHZ" secondAttribute="width" multiplier="0.5" id="1od-kZ-COC"/>
+                            <constraint firstItem="MOg-os-9OL" firstAttribute="centerY" secondItem="N46-s3-eHZ" secondAttribute="centerY" multiplier="1.55" id="3nA-WX-ZlY"/>
+                            <constraint firstItem="ZWx-DC-9Ag" firstAttribute="centerY" secondItem="N46-s3-eHZ" secondAttribute="centerY" id="F3C-v0-siF"/>
+                            <constraint firstItem="ZWx-DC-9Ag" firstAttribute="width" secondItem="N46-s3-eHZ" secondAttribute="width" multiplier="0.17" id="Gdd-fa-kj3"/>
+                            <constraint firstItem="i3F-z2-X1T" firstAttribute="centerX" secondItem="MOg-os-9OL" secondAttribute="centerX" id="Pft-1o-wFb"/>
+                            <constraint firstItem="MOg-os-9OL" firstAttribute="centerX" secondItem="N46-s3-eHZ" secondAttribute="centerX" multiplier="1.2" id="ZC9-H8-7Xs"/>
+                            <constraint firstItem="ZWx-DC-9Ag" firstAttribute="centerX" secondItem="N46-s3-eHZ" secondAttribute="centerX" multiplier="0.25" id="ZzU-qC-U27"/>
+                            <constraint firstItem="i3F-z2-X1T" firstAttribute="centerY" secondItem="N46-s3-eHZ" secondAttribute="centerY" multiplier="0.7" id="iJK-dx-7u1"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3F-z2-X1T">
-                        <rect key="frame" x="69" y="24" width="243" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOg-os-9OL">
-                        <rect key="frame" x="208" y="24" width="104" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="followButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wvK-Q8-hIQ"/>
-                        </connections>
-                    </button>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" red="0.31228116750000001" green="0.72746056830000005" blue="0.74134423679999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="ZWx-DC-9Ag" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="51t-da-NY7"/>
-                    <constraint firstItem="ZWx-DC-9Ag" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9f7-0q-j88"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="i3F-z2-X1T" secondAttribute="bottom" constant="16" id="DWB-v6-fh2"/>
-                    <constraint firstItem="i3F-z2-X1T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="61" id="UT5-c3-8Og"/>
-                    <constraint firstItem="ZWx-DC-9Ag" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aLr-MC-mgy"/>
-                    <constraint firstItem="i3F-z2-X1T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="g1K-gd-qm8"/>
-                    <constraint firstItem="i3F-z2-X1T" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="g2v-Gy-Din"/>
+                    <constraint firstAttribute="trailing" secondItem="N46-s3-eHZ" secondAttribute="trailing" constant="5" id="6dL-bh-Dwz"/>
+                    <constraint firstItem="N46-s3-eHZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="7Gq-lI-fd9"/>
+                    <constraint firstAttribute="bottom" secondItem="N46-s3-eHZ" secondAttribute="bottom" constant="5" id="R1U-wQ-5YF"/>
+                    <constraint firstItem="N46-s3-eHZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ZTE-Uo-n1a"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="containerView" destination="N46-s3-eHZ" id="PJJ-vd-kCb"/>
                 <outlet property="followButton" destination="MOg-os-9OL" id="Y2a-yj-FEh"/>
                 <outlet property="label" destination="i3F-z2-X1T" id="0LF-m1-bO9"/>
                 <outlet property="profileImage" destination="ZWx-DC-9Ag" id="eQt-8v-L34"/>
             </connections>
-            <point key="canvasLocation" x="121" y="25"/>
+            <point key="canvasLocation" x="121" y="43.5"/>
         </tableViewCell>
     </objects>
 </document>

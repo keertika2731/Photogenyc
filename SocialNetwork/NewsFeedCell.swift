@@ -10,20 +10,20 @@ import UIKit
 
 class NewsFeedCell: UICollectionViewCell {
 
-   
+    @IBOutlet var shadowView: UIView!
+    
     @IBOutlet weak var nameLabel: UILabel!
 
     @IBOutlet weak var imageLabel: UIImageView!
 
     @IBOutlet var userImage: UIImageView!
     
-    @IBOutlet weak var likeLabel: UIButton!
 
+
+    @IBOutlet var likes: UILabel!
     @IBOutlet weak var numberOfLikesLabel: UILabel!
 
 
-    @IBAction func likeButton(_ sender: Any) {
-    }
-    
+   
     
 }

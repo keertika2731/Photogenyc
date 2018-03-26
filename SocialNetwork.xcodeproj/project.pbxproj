@@ -30,7 +30,6 @@
 		B1238E581E8A65F7006D0F25 /* UploadPicturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E571E8A65F7006D0F25 /* UploadPicturesVC.swift */; };
 		B1238E5A1E8E16AE006D0F25 /* CKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E591E8E16AE006D0F25 /* CKButton.swift */; };
 		B1238E5E1E8E2188006D0F25 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */; };
-		B1238E5F1E8E2188006D0F25 /* NewsFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1238E5D1E8E2188006D0F25 /* NewsFeedCell.xib */; };
 		B17CF43A200B9E3E00F92D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17CF439200B9E3D00F92D43 /* Main.storyboard */; };
 		B17CF43C200B9EC600F92D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */; };
 		B193D7062035F9DF005B399C /* UploadImageTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B193D7052035F9DF005B399C /* UploadImageTabBarVC.swift */; };
@@ -99,7 +98,6 @@
 		B1238E571E8A65F7006D0F25 /* UploadPicturesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPicturesVC.swift; sourceTree = "<group>"; };
 		B1238E591E8E16AE006D0F25 /* CKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKButton.swift; sourceTree = "<group>"; };
 		B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
-		B1238E5D1E8E2188006D0F25 /* NewsFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsFeedCell.xib; sourceTree = "<group>"; };
 		B17CF439200B9E3D00F92D43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B193D7052035F9DF005B399C /* UploadImageTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageTabBarVC.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */,
 				B17CF439200B9E3D00F92D43 /* Main.storyboard */,
 				B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */,
-				B1238E5D1E8E2188006D0F25 /* NewsFeedCell.xib */,
 				B107EF1C1E5492AA00098467 /* Assets.xcassets */,
 				B107EF211E5492AA00098467 /* Info.plist */,
 			);
@@ -404,7 +401,6 @@
 			files = (
 				B107EF441E54940D00098467 /* GoogleService-Info.plist in Resources */,
 				B17CF43C200B9EC600F92D43 /* LaunchScreen.storyboard in Resources */,
-				B1238E5F1E8E2188006D0F25 /* NewsFeedCell.xib in Resources */,
 				B17CF43A200B9E3E00F92D43 /* Main.storyboard in Resources */,
 				B111A3061E9A9A4200BE9BC1 /* FacebookButton.png in Resources */,
 				B111A3021E9A926000BE9BC1 /* editedCamera.png in Resources */,
@@ -794,7 +790,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR)/Users/keertika/Downloads/FacebookSDKs-iOS-4.19.0";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Users/keertika/Downloads/FacebookSDKs-iOS-4.19.0",
+				);
 				INFOPLIST_FILE = SocialNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = keertika.SocialNetwork;

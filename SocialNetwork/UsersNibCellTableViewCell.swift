@@ -17,6 +17,7 @@ class UsersNibCellTableViewCell: UITableViewCell
 {
   
     var id:Int!
+    @IBOutlet var containerView: UIView!
     weak var delegate:followButtonDelegate!
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
@@ -40,6 +41,11 @@ class UsersNibCellTableViewCell: UITableViewCell
        // obj.followButtonTapped(at: indexPath)
        self.delegate?.followButtonTapped(at: id)//4
       
+    }
+    
+    override func awakeFromNib() {
+        containerView.layer.borderWidth = 1.0
+        containerView.layer.borderColor = UIColor.black.cgColor
     }
     
 
