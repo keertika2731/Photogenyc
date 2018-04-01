@@ -41,11 +41,11 @@ class UsersVCService
                     print("newValues\(String(describing: newValue["uid"]))")
                     if let fullName = newValue["fullname"] as? String, let imagePath = newValue["urlToImage"] as? String, let userName = newValue["username"] as? String, let _ = newValue["password"]  as? String
                     {
-                        print("usename")
+                      //  print("usename")
                         str.append(fullName)
                         
                         userToShow.fullName = fullName
-                        print(fullName)
+                      //  print(fullName)
                         userToShow.imagePath = imagePath
                         userToShow.userID = uid
                         userToShow.userName = userName
@@ -71,21 +71,21 @@ class UsersVCService
     class func retrievePosts(_abc: @escaping ([Post])-> Void)
     { self.posts = []
         self.following = []
-        print("retreivePosts")
+        //print("retreivePosts")
         let ref = Database.database().reference() // event type is value
 
         ref.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
             let  users = snapshot.value as! [String:AnyObject]
             //extract it in a dictionary
             for(_,value) in users  //value is the any object from dictionary
-            {print("-value")
+            {   //print("-value")
                  if let uid = value ["uid"] as? String
                  {
                     if uid == Auth.auth().currentUser!.uid // if he is the current user then check if he is following any one
-                    {print("uid")
+                    {  ///print("uid")
                     if let followingUsers = value["following"] as? [String : String]// users ka ek element value me h usme se following nikal k dict me cast karenge
                     {
-                        print("if let following user")
+                        //print("if let following user")
                         for(_,user) in followingUsers
                         {
                             self.following.append(user)// add all the users in following folder of current user into following array

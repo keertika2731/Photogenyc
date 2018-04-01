@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import SVProgressHUD
 import FirebaseDatabase
 
 import Kingfisher
@@ -18,6 +18,7 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
    
 
     
+   
     @IBOutlet weak var collectionView: UICollectionView!
     var feed = [Post](){
     didSet{
@@ -44,31 +45,14 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
     
         // Do any additional setup after loading the view.
            }
-//    override func viewDidAppear(_ animated: Bool) {
-//        //print("viewDidAppear")
-//        super.viewDidAppear(animated)
-//        print("newsfeedviewdidappear")
-//        if self.feed != nil
-//        {
-//            PKHUD.sharedHUD.show()
-//            UsersVCService.retrievePosts(_abc:
-//                {
-//
-//                incomingList in
-//                    print(incomingList.count)
-//                self.feed = incomingList
-//                self.collectionView.reloadData()
-//                print("newsFeedincomingList\(incomingList)nomber\(self.feed.count)")
-//                PKHUD.sharedHUD.hide()
-//            })
-//
-//        }
-//    }
+
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.automaticallyAdjustsScrollViewInsets = false
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultMaskType(.clear)
         UsersVCService.retrievePosts(_abc:
             {
                 
@@ -79,14 +63,17 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
                     print("tableView empty")
                     // self.feed = nil
                     self.feed = incomingList
+                    Alert.pop(VC: self, message: "No post to show", action: "OK")
+                    SVProgressHUD.dismiss()
                 }
              
                 else
                 {
                      self.collectionView.reloadData()
                      self.feed = incomingList
+                    SVProgressHUD.dismiss()
                 }
-                print(incomingList.count)
+              //  print(incomingList.count)
                 
 
                 
@@ -120,7 +107,7 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
         
         cell.shadowView.layer.borderWidth = 1
         cell.shadowView.layer.borderColor = UIColor.black.cgColor
-     
+     cell.date.text = self.feed[indexPath.row].date
 
         return cell
         

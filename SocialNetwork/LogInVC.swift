@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 class LogInVC: UIViewController
 {
 
@@ -56,21 +57,30 @@ class LogInVC: UIViewController
     @IBAction func logInButton(_ sender: Any)
     {
         if emailTextField.text != "" || passwordTextFild.text != ""
-        {
+        {SVProgressHUD.show()
+            SVProgressHUD.setDefaultMaskType(.clear)
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextFild.text! , completion:
                 {
                     (user,error)in if let error = error
                 {
                 print(error.localizedDescription)
+                    SVProgressHUD.dismiss()
+                    Alert.pop(VC: self, message: error.localizedDescription, action: "OK")
                 }
-                else
+                else if self.emailTextField.text == ""
                 {
-                print("enter password")
+                 Alert.pop(VC: self, message: "Enter Your Email", action: "OK")
                 }
-                
+                    
+                    else if self.passwordTextFild.text == ""
+
+                    {
+                          Alert.pop(VC: self, message: "Enter password", action: "OK")
+                    }
                 
                 if let user = user
                 {
+                      SVProgressHUD.dismiss()
                     let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tab") as! TabBarController
                     self.navigationController?.pushViewController(vc, animated: true)
                  //   self.present(vc, animated: true, completion: nil)

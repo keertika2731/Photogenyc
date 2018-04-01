@@ -30,6 +30,7 @@
 		B1238E581E8A65F7006D0F25 /* UploadPicturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E571E8A65F7006D0F25 /* UploadPicturesVC.swift */; };
 		B1238E5A1E8E16AE006D0F25 /* CKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E591E8E16AE006D0F25 /* CKButton.swift */; };
 		B1238E5E1E8E2188006D0F25 /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */; };
+		B14DE63C206C5E7A00764A21 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14DE63B206C5E7A00764A21 /* AlertViewController.swift */; };
 		B17CF43A200B9E3E00F92D43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17CF439200B9E3D00F92D43 /* Main.storyboard */; };
 		B17CF43C200B9EC600F92D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */; };
 		B193D7062035F9DF005B399C /* UploadImageTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B193D7052035F9DF005B399C /* UploadImageTabBarVC.swift */; };
@@ -98,6 +99,7 @@
 		B1238E571E8A65F7006D0F25 /* UploadPicturesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPicturesVC.swift; sourceTree = "<group>"; };
 		B1238E591E8E16AE006D0F25 /* CKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKButton.swift; sourceTree = "<group>"; };
 		B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
+		B14DE63B206C5E7A00764A21 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B17CF439200B9E3D00F92D43 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B193D7052035F9DF005B399C /* UploadImageTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageTabBarVC.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		B107EF141E5492AA00098467 /* SocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				B14DE63A206C5E5200764A21 /* PopUp */,
 				B1DC230B200B8909004E2840 /* Header.h */,
 				B104275A202AAE0D00A9BBB7 /* New Group */,
 				B1C5B8A01E5EE04E007D34BE /* Objects */,
@@ -214,7 +217,6 @@
 				B1C5B89E1E5EE028007D34BE /* ViewControllers */,
 				B107EF151E5492AA00098467 /* AppDelegate.swift */,
 				B107EF431E54940D00098467 /* GoogleService-Info.plist */,
-				B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */,
 				B17CF439200B9E3D00F92D43 /* Main.storyboard */,
 				B17CF43B200B9EC600F92D43 /* LaunchScreen.storyboard */,
 				B107EF1C1E5492AA00098467 /* Assets.xcassets */,
@@ -239,6 +241,14 @@
 				B107EF371E5492AA00098467 /* Info.plist */,
 			);
 			path = SocialNetworkUITests;
+			sourceTree = "<group>";
+		};
+		B14DE63A206C5E5200764A21 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				B14DE63B206C5E7A00764A21 /* AlertViewController.swift */,
+			);
+			name = PopUp;
 			sourceTree = "<group>";
 		};
 		B1C5B89E1E5EE028007D34BE /* ViewControllers */ = {
@@ -267,6 +277,7 @@
 		B1C5B89F1E5EE03D007D34BE /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				B1238E5C1E8E2188006D0F25 /* NewsFeedCell.swift */,
 				B1C5B89C1E5ED73F007D34BE /* UserCell.swift */,
 			);
 			name = CustomCells;
@@ -630,6 +641,7 @@
 				B1016C761E69792D00C6AAD7 /* UsersNibCellTableViewCell.swift in Sources */,
 				B1C5B89D1E5ED73F007D34BE /* UserCell.swift in Sources */,
 				B1042764202EB30C00A9BBB7 /* CommonMethods.swift in Sources */,
+				B14DE63C206C5E7A00764A21 /* AlertViewController.swift in Sources */,
 				B1C5B89B1E5ED43C007D34BE /* UsersVC.swift in Sources */,
 				B1FBE1141E8FE88C001B5847 /* Post.swift in Sources */,
 				B1238E5E1E8E2188006D0F25 /* NewsFeedCell.swift in Sources */,

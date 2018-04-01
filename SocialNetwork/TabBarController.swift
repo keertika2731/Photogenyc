@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
             let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "NewsFeedVC")
-        let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "UploadImageTabBarVC")
+        let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "UploadPicturesVC")
         let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "UsersVC")
 let viewControllers = [vc1,vc2,vc3]
         self.viewControllers = viewControllers as! [UIViewController]
@@ -25,7 +25,7 @@ let viewControllers = [vc1,vc2,vc3]
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.selectedIndex = 0
+       // self.selectedIndex = 0
     }
 //    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
 //        if(item == tabBar.items![1])

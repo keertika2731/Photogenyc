@@ -15,6 +15,7 @@ class Post: NSObject
     var pathToImage: String!
     var postID: String!
     var userID: String!
-    
+    var caption:String!
+    var date = " "
 
 }

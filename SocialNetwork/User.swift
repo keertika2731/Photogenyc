@@ -14,4 +14,5 @@ class User: NSObject {
     var imagePath: String!
     var userName: String!
     var urlToImage: String!
+   
 }

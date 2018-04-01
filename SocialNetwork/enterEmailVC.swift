@@ -33,16 +33,25 @@ nextButtonOutlet.layer.cornerRadius = nextButtonOutlet.frame.size.height/2
 
     @IBAction func nextButton(_ sender: Any)
     {
+        if self.emailTextField.text == nil
+        {
+            Alert.pop(VC: self, message: "Enter your email", action: "OK")
+        }
         
+        else
+        {
         let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "enterNameVC") as! enterNameVC
         show(destinationVC, sender: nil)
         destinationVC.email = emailTextField.text
+        }
     }
     
     @IBAction func signInAction(_ sender: Any) {
         
+     
         
         self.navigationController?.popToViewController((self.navigationController?.viewControllers[1])!, animated: true)
+        
     }
     
    

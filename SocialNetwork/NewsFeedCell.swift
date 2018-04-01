@@ -18,7 +18,8 @@ class NewsFeedCell: UICollectionViewCell {
 
     @IBOutlet var userImage: UIImageView!
     
-
+    @IBOutlet var date: UILabel!
+    
 
     @IBOutlet var likes: UILabel!
     @IBOutlet weak var numberOfLikesLabel: UILabel!

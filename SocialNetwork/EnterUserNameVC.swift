@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import SVProgressHUD
 class EnterUserNameVC: UIViewController  , UIImagePickerControllerDelegate , UINavigationControllerDelegate
 {
     @IBOutlet var signUpButton: UIButton!
@@ -85,11 +86,13 @@ class EnterUserNameVC: UIViewController  , UIImagePickerControllerDelegate , UIN
         
       
         else
-        {
+        {SVProgressHUD.show()
+            SVProgressHUD.setDefaultMaskType(.clear)
             Auth.auth().createUser(withEmail: email!, password: password!,completion: { (user,error) in
                 if let error = error
                 {
-                    print(error.localizedDescription)
+                    SVProgressHUD.dismiss()
+                    Alert.pop(VC: self, message: error.localizedDescription, action: "OK")
                 }
                
                 if let user = user
@@ -122,6 +125,8 @@ class EnterUserNameVC: UIViewController  , UIImagePickerControllerDelegate , UIN
                              
                                 let userInfo: [String: Any] = ["uid" : user.uid , "username": self.usernameTextField.text! , "urlToImage": url.absoluteString , "password":self.password , "fullname":self.name]
                                 self.ref.child("users").child(user.uid).setValue(userInfo)  //if it does not exxist it creates a folder users in database in it creates
+                               
+                                SVProgressHUD.dismiss()
                                 print("you have signed up")
                                             //self.show(destinationVC, sender: nil)
                                

@@ -36,12 +36,19 @@ func hideKeyboard()
    
     @IBAction func next(_ sender: Any)
     {
+        if self.nameTextField.text == nil
+        {
+            Alert.pop(VC: self, message: "Enter your name", action: "OK")
+        }
         
+        else
+        {
         let destinationVC = self.storyboard?.instantiateViewController(withIdentifier: "EnterUserNameVC") as! EnterUserNameVC
         show(destinationVC, sender: nil)
         destinationVC.email = email
         destinationVC.name = nameTextField.text
         destinationVC.password = passwordTextField.text
+    }
     }
    
     @IBAction func signInButton(_ sender: Any) {
