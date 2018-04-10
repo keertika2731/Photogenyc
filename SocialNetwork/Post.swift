@@ -16,6 +16,6 @@ class Post: NSObject
     var postID: String!
     var userID: String!
     var caption:String!
-    var date = " "
-
+    var date:String!
+    var liked = false
 }

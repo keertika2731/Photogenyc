@@ -102,6 +102,9 @@ class EnterUserNameVC: UIViewController  , UIImagePickerControllerDelegate , UIN
                     changeRequest.commitChanges(completion: nil)
                     
                     let imageRef = self.userStorage.child("\(user.uid).jpg") //in users folder creating jpg file with user id
+                    
+                    if self.profileImage.image != nil
+                    {
                     let data = UIImageJPEGRepresentation(self.profileImage.image!, 0.5)//parsing image as data
                     let uploadTask = imageRef.putData(data!, metadata: nil)//imageRef.put(data!, metadata:nil,completion :
                         {(metadata,err) in
@@ -138,6 +141,13 @@ class EnterUserNameVC: UIViewController  , UIImagePickerControllerDelegate , UIN
                         })
                     }
         uploadTask.resume()
+                }
+                    
+                    else
+                    {
+                        Alert.pop(VC: self, message: "Please dd your profile image", action: "OK")
+                    }
+                    
 }
             
  } )

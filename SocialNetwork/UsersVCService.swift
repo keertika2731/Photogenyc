@@ -90,6 +90,9 @@ class UsersVCService
                         {
                             self.following.append(user)// add all the users in following folder of current user into following array
                           //  print("followingusers\(following)")
+                            
+                            self.following.append(Auth.auth().currentUser!.uid)
+
                         }
                     }
                         else
@@ -107,7 +110,7 @@ class UsersVCService
                              let postsSnap = snap.value as! [String:AnyObject]
                             for(_,post) in postsSnap
                             {
-                                print("-post")
+                                print(post as? [String:Any])
                                 print(post["userID"])
                                 if let userID = post["userID"] as? String //post folder me se ek element value me h
                                 {
@@ -117,14 +120,39 @@ class UsersVCService
                                         //ek post userID ko ek user k sare following se comapre karenge
                                         {
                                            let posst = Post()
-                                            if let author = post["author"] as? String , let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["userID"] as? String
+                                            if let author = post["author"] as? String ,
+                                                let likes = post["likes"] as? Int,
+                                                let pathToImage = post["pathToImage"] as? String,
+                                                let postID = post["postID"] as? String,
+                                                let date = post["date"] as? String,
+                                                    let caption = post["caption"] as? String
+                                               // let liked = post["]
                                             {
+                                                
+                                                
                                                 posst.author = author
                                                 posst.likes = likes
                                                 posst.pathToImage = pathToImage
                                                 posst.userID = userID
                                                 posst.postID = postID
-                                                print("pppppp\(posst)")
+                                                posst.caption = caption
+                                                posst.date = date
+                                               
+                                                if let peopleWhoLiked  = post["peopleWhoLike"] as! [String:String]?
+                                                {
+                                                    for (_,id) in peopleWhoLiked
+                                                    {
+                                                        if id == uid
+                                                        {
+                                                            posst.liked = true
+                                                        }
+                                                      
+                                                    }
+                                                }
+                                                
+                                                
+                                                
+                                                
                                                 self.posts.append(posst)
                                             }
                                         }

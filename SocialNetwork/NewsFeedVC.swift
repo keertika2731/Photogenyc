@@ -19,6 +19,8 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
 
     
    
+    @IBOutlet var caption: UILabel!
+    var height : CGFloat!
     @IBOutlet weak var collectionView: UICollectionView!
     var feed = [Post](){
     didSet{
@@ -44,6 +46,11 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
 // self.collectionView.collectionViewLayout = self.collectionViewFlowLayout
     
         // Do any additional setup after loading the view.
+        
+        
+//        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout { flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)//CGSize(1,1)
+        
+            
            }
 
     
@@ -80,7 +87,11 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
         })
         
     }
-  
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        height = self.collectionView.collectionViewLayout.collectionViewContentSiz()>
+//    }
+//
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         print("NewsFeedpritnno of sections")
           return 1
@@ -97,8 +108,7 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
 
         cell.imageLabel.kf.setImage(with: url)
        // cell.imageLabel.image = UIImage(named: "Car1.png")
-        
-   //     cell.shadowView.layer.masksToBounds = false
+        //     cell.shadowView.layer.masksToBounds = false
         cell.shadowView.layer.shadowColor = UIColor.black.cgColor
         cell.shadowView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         cell.shadowView.layer.shadowRadius = 5
@@ -108,10 +118,30 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
         cell.shadowView.layer.borderWidth = 1
         cell.shadowView.layer.borderColor = UIColor.black.cgColor
      cell.date.text = self.feed[indexPath.row].date
-
+cell.caption.text = self.feed[indexPath.row].caption
+       
+        cell.frame.size.width = UIScreen.main.bounds.width * 0.9
+        cell.frame.origin.x = UIScreen.main.bounds.width * 0.05
+        cell.postID = self.feed[indexPath.row].postID
+        if self.feed[indexPath.row].liked
+        {
+        cell.likeButton.setImage(UIImage(named:"like"), for: .normal)
+        }
+        cell.likeLabel.text = "\((self.feed[indexPath.row].likes)!) Likes "
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+//        cell.contentView.frame = CGRect(x:cell.contentView.frame.origin.x, y:cell.contentView.frame.origin.y, width:screenWidth, height:65.0)
+//       // CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
+//
+//        cell.caption.preferredMaxLayoutWidth = 50
+//        cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
         return cell
         
     }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+//        return
+//    }
 
     
     
@@ -135,6 +165,11 @@ class NewsFeedVC: UIViewController ,UICollectionViewDataSource,UICollectionViewD
             print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+ 
+    
+
 }
  
 
